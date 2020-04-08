@@ -29,15 +29,8 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./music.php">Music</a>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">People</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="./contributors.php">Actors</a>
-						<a class="dropdown-item" href="./contributors.php">Creators</a>
-						<a class="dropdown-item" href="./contributors.php">Directors</a>
-						<a class="dropdown-item" href="./contributors.php">Recording Artists</a>
-						<a class="dropdown-item" href="./contributors.php">Writers</a>
-					</div>
+				<li class="nav-item">
+					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
 				<form class="form-inline" action="php-goes-here.php">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
@@ -55,10 +48,8 @@
 				   or die('Could not connect ');
 				echo "Connected successfully";
 
-
-
 				//perform SQL query
-				$query = 'SELECT * from SHOWS';
+				$query = 'SELECT title, year_released FROM CONTENT, SHOWS WHERE CONTENT.contId = SHOWS.contId ORDER BY year_released DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				echo "query ok";

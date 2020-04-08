@@ -20,7 +20,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="../index.php">Home</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="./movies.php">Movies</a>
 				</li>
 				<li class="nav-item">
@@ -29,15 +29,8 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./music.php">Music</a>
 				</li>
-				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">People</a>
-					<div class="dropdown-menu">
-						<a class="dropdown-item" href="./contributors.php">Actors</a>
-						<a class="dropdown-item" href="./contributors.php">Creators</a>
-						<a class="dropdown-item" href="./contributors.php">Directors</a>
-						<a class="dropdown-item" href="./contributors.php">Recording Artists</a>
-						<a class="dropdown-item" href="./contributors.php">Writers</a>
-					</div>
+				<li class="nav-item active">
+					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
 				<form class="form-inline" action="php-goes-here.php">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
@@ -53,15 +46,11 @@
 				// connect to database
 				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
 				   or die('Could not connect ');
-				echo "Connected successfully";
-
-
 
 				//perform SQL query
-				$query = 'SELECT * from CONTRIBUTORS';
+				$query = 'SELECT fname, lname FROM CONTRIBUTORS ORDER BY lname;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
-				echo "query ok";
 
 				//print results in html
 				echo " <table border='1'>\n";

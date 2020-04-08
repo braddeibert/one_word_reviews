@@ -14,34 +14,66 @@
 <body>
 	<div class="container-fluid" id="viewport" style="padding: 0px;">
 		<div class="navbar navbar-expand-lg bg-light navbar-light">
-			<a class="navbar-brand mb-0 h1" id="brand">word.</a>
+			<a class="navbar-brand mb-0 h1" id="brand">word.</a>			
 			
 			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="../index.php">Home</a>
+				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="index.php">Home</a>
+					<a class="nav-link" href="./movies.php">Movies</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./pages/movies.php">Movies</a>
+					<a class="nav-link" href="./shows.php">Shows</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./pages/shows.php">Shows</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="./pages/music.php">Music</a>
+					<a class="nav-link" href="./music.php">Music</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
-				<form class="form-inline" action="php-goes-here.php">
+				<form class="form-inline" action="result.php">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
 					<button class="btn btn-success" type="submit">Go</button>
 				</form>
 			</ul>
 		</div>
+	
+		<div class="container">
+			
+			<!-- php for pulling all movies from db -->
+			<?php
+				// connect to database
+				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+				   or die('Could not connect ');
+				echo "Connected successfully";
 
-		<div class="jumbotron-fluid text-center" id="landing" style="">
-			<h1 id="land-title">Welcome to <strong>word.</strong></h1>
-			<h3>Easy to digest reviews for the 21st century.</h3>
+				//perform SQL query
+				$query = 'SELECT title, year_released FROM CONTENT, MOVIES WHERE CONTENT.contId = MOVIES.contId ORDER BY year_released DESC;';
+				$result = mysqli_query($link, $query)
+						or die("Query failed ");
+				echo "query ok";
+				
+				echo '<h2>Search results for ''</h2>'
+
+				//print results in html
+				echo " <table border='1'>\n";
+				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+						echo "\t<tr>\n";
+						foreach ($line as $col_value) {
+								echo "\t\t<td>$col_value</td>\n";
+						}
+						echo "\t</tr>\n";
+				}
+				echo "</table>\n";
+
+				//Free result set
+				mysqli_free_result($result);
+
+				//close connection
+				mysqli_close($link);
+			?>
+			
 		</div>
 	</div>
 </body>
