@@ -48,6 +48,39 @@
 	
 		<div class="container">
 			<h2>All Shows</h2>
+			
+			<?php
+				// connect to database
+				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+				   or die('Could not connect ');
+				echo "Connected successfully";
+
+
+
+				//perform SQL query
+				$query = 'SELECT * from SHOWS';
+				$result = mysqli_query($link, $query)
+						or die("Query failed ");
+				echo "query ok";
+
+				//print results in html
+				echo " <table border='1'>\n";
+				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+						echo "\t<tr>\n";
+						foreach ($line as $col_value) {
+								echo "\t\t<td>$col_value</td>\n";
+						}
+						echo "\t</tr>\n";
+				}
+				echo "</table>\n";
+
+				//Free result set
+				mysqli_free_result($result);
+
+				//close connection
+				mysqli_close($link);
+			?>
+			
 		</div>
 	</div>
 </body>
