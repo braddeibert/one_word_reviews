@@ -1,0 +1,28 @@
+body {
+	background-color: black;
+}
+
+#viewport {
+	width: 100%;
+	height: 100%;
+}
+
+#brand {	
+	color: white;
+    background-color: #28a745;
+    border-radius: .2em;
+    padding: 5px 10px;
+}
+
+#landing {
+	background-image: url(https://media.giphy.com/media/heIX5HfWgEYlW/source.gif); 
+	background-repeat: no-repeat; 
+	background-size: cover; 
+	background-position: 0px; 
+	height: 93vh; 
+	color: white;
+}
+
+#land-title {
+	padding-top: 10vh;
+}
