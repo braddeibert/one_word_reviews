@@ -50,7 +50,8 @@
 			?>
 			
 			<!-- form for sumbitting review -->
-			<form action="./updateuser.php?user=<?php echo "$_GET['user']"; ?>" method="post">
+			<form action="./updateuser.php" method="post">
+				<input type="text" name="user" value="<?php echo "$_GET['$user']";?>">
 				<div class="form-group">
 					<label for="location">Location:</label>
 					<input type="text" name="loc" class="form-control" placeholder="Your location">
@@ -68,7 +69,7 @@
 				   or die('Could not connect ');
 				
 				// get form submissions
-				$username = $_GET['user'];
+				$username = $_POST['user'];
 				$location = $_POST['loc'];
 				$userbio = $_POST['bio'];
 				
