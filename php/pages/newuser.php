@@ -81,7 +81,7 @@
 				}
 
 				//perform SQL query
-				$query = "INSERT INTO USERS VALUES ('$username', '$location', '$bio');";
+				$query = "INSERT INTO USERS VALUES ('$username', '$location', '$userbio');";
 				$result = mysqli_query($link, $query)
 						or die("Username {$username} is already in use.");
 				
