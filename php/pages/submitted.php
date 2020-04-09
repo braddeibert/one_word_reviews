@@ -57,14 +57,20 @@
 				if (strpos(' ', $review) !== false) {
 					die('Review must be one word!');
 				}
+				echo 'review is one word'
 			
 				$validateContent = "SELECT contId FROM CONTENT WHERE title = '$title';";
 				$test = mysqli_query($link, $validateContent)
 						or die("Query failed ");
 						
+				if ($test->num_rows > 0) {
+					$id = $test->fetch_array(MYSQLI_NUM);
+				} else {
+					die("No such content ");
+				}
 
 				//perform SQL query
-				$query = "INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$test', '$review');";
+				$query = "INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$id[0]', '$review');";
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				
