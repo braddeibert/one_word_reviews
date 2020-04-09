@@ -54,6 +54,19 @@
 
 				//print results in html
 				echo " <table class='table'>\n";
+				
+				$query = mysql_query("DESCRIBE `MyTable`");
+					while($result = mysql_fetch_assoc($query)) {
+						echo $result['Field'] . "\n";
+					}
+				
+				//headings
+				echo "\t<thead>\n"
+				echo "\t\t<th>Album Title</th>\n"
+				echo "\t\t<th>Year Released</th>\n"
+				echo "\t</thead>\n"
+				
+				//data
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 						echo "\t<tr>\n";
 						foreach ($line as $col_value) {
