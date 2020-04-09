@@ -42,8 +42,23 @@
 			</ul>
 		</div>
 
-		<div class="container">
-			Write a review
+		<div class="container text-center">
+			<h2>Review</h2>
+			
+			<!-- form for sumbitting review -->
+			<form action="./review.php">
+				<div class="form-group">
+					<label for="title">Title:</label>
+					<input type="title" class="form-control" placeholder="Enter content title">
+				</div>
+				<div class="form-group">
+					<label for="review">Word:</label>
+					<input type="review" class="form-control" placeholder="Enter your review!">
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+			
+			
 		</div>
 	</div>
 </body>
