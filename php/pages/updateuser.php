@@ -45,7 +45,7 @@
 		<div class="container">
 			
 			<?php 
-				$username = $_GET['user'];
+				$username = $_GET['uname'];
 				echo "<h1 class='display-4'>Edit info for $username</h1>\n";
 			?>
 			
