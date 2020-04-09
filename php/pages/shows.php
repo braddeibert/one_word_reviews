@@ -53,7 +53,7 @@
 						or die("Query failed ");
 
 				//print results in html
-				echo " <table class="table">\n";
+				echo " <table class='table'>\n";
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 						echo "\t<tr>\n";
 						foreach ($line as $col_value) {
