@@ -43,26 +43,50 @@
 		</div>
 
 		<div class="container">
+			
+			<?php 
+				$username = $_GET['user'];
+				echo "<h1 class='display-4'>$username</h1>\n";
+			?>
+			
+			<!-- form for sumbitting review -->
+			<form action="./updateuser.php?<?php $_GET['user'] ?>" method="post">
+				<div class="form-group">
+					<label for="location">Location:</label>
+					<input type="text" name="loc" class="form-control" placeholder="Your location">
+				</div>
+				<div class="form-group">
+					<label for="bio">Bio:</label>
+					<input type="text" name="bio" class="form-control" placeholder="Write bio here...">
+				</div>
+				<button type="submit" class="btn btn-success">Update</button>
+			</form>
+			
 			<?php
 				// connect to database
 				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
 				   or die('Could not connect ');
-				   
-				$uname = $_GET['user'];
+				
+				// get form submissions
+				$username = $_GET['user'];
+				$location = $_POST['loc'];
+				$userbio = $_POST['bio'];
+				
+				$username = trim($username);
+				$location = trim($location);
+				$userbio = trim($userbio);
+				
+				if ($username == '') {
+					exit();
+				}
 
-				// show most recent reviews
-				$query = "SELECT username, location, bio FROM USERS WHERE username = '$uname';";
+				//perform SQL query
+				$query = "UPDATE USERS VALUES ('$username', '$location', '$userbio');";
 				$result = mysqli_query($link, $query)
-						or die("Query failed - no user found");
+						or die("Query failed ");
 				
-				// print info
-				$info = $result->fetch_array(MYSQLI_NUM);
-				
-				echo "<h1 class='display-3'>$info[0]</h1>\n";
-				echo "<h1 class='display-5'>$info[1]</h1>\n";
-				echo "<h5>Bio:</h5>\n";
-				echo "<p>$info[2]</p>\n";
-				echo "<a href='./updateuser.php?user=$uname'>Edit info</a>\n";
+				// success message & display review
+				echo "<p>Info updated successfully.</p>";
 
 				//Free result set
 				mysqli_free_result($result);
@@ -70,7 +94,7 @@
 				//close connection
 				mysqli_close($link);
 			?>
-				
+			
 		</div>
 	</div>
 </body>
