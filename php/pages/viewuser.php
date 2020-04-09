@@ -59,7 +59,8 @@
 				$info = $result->fetch_array(MYSQLI_NUM);
 				
 				echo "<h1 class='display-3'>$info[0]</h1>\n";
-				echo "<p>$info[1]</p>\n";
+				echo "<h3>$info[1]</h3>\n";
+				echo "<h5>Bio:</h5>\n";
 				echo "<p>$info[2]</p>\n";
 
 				//Free result set
