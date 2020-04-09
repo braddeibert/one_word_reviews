@@ -33,7 +33,7 @@
 					<a class="nav-link" href="./music.php">Music</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./contributors.php">People</a>
+					<a class="nav-link" href="./contributors.php">Contributors</a>
 				</li>
 				<form class="form-inline" action="./result.php" method="post">
 					<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search all reviews">
@@ -59,6 +59,10 @@
 						or die("Query failed - no content found");
 				
 				echo "<h2>Search results for '{$search}'</h2>\n";
+				
+				if ($result->num_rows == 0) {
+					die("No results found.")
+				}
 
 				//print results in html
 				echo " <table class='table'>\n";

@@ -36,7 +36,7 @@
 					<a class="nav-link" href="./pages/music.php">Music</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./pages/contributors.php">People</a>
+					<a class="nav-link" href="./pages/contributors.php">Contributors</a>
 				</li>
 				<form class="form-inline" action="./pages/result.php" method="post">
 					<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search all reviews">

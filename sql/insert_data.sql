@@ -9,7 +9,7 @@ INSERT INTO USERS VALUES ('GrandmaSue', 'Bend, Oregon, USA', 'User has not set a
 
 --movies
 INSERT INTO CONTENT VALUES (1, 'The Shawshank Redemption', 'Drama', 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', 1994, 'R', 'Castle Rock Entertainment');
-INSERT INTO CONTENT VALUES (2, 'The Dark Knight', 'Action', 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', 2008, 'PG-13', 'Warner Bros.');
+INSERT INTO CONTENT VALUES (2, 'The Dark Knight', 'Action', 'When the menace known as the Joker wreaks havoc and chaos on the Contributors of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', 2008, 'PG-13', 'Warner Bros.');
 INSERT INTO CONTENT VALUES (3, 'Pulp Fiction', 'Crime', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.', 1994, 'R', 'Miramax');
 INSERT INTO CONTENT VALUES (4, 'Toy Story', 'Animation', 'A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boys room.', 1995, 'G', 'Pixar Animation Studios');
 INSERT INTO CONTENT VALUES (5, 'Shrek', 'Animation', 'A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.', 2001, 'PG', 'DreamWorks Animation');

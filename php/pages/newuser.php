@@ -33,7 +33,7 @@
 					<a class="nav-link" href="./music.php">Music</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./contributors.php">People</a>
+					<a class="nav-link" href="./contributors.php">Contributors</a>
 				</li>
 				<form class="form-inline" action="./result.php" method="post">
 					<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search all reviews">
@@ -61,6 +61,36 @@
 				</div>
 				<button type="submit" class="btn btn-success">Submit</button>
 			</form>
+			
+			<?php
+				// connect to database
+				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+				   or die('Could not connect ');
+				
+				// get form submissions
+				$username = $_POST['uname'];
+				$location = $_POST['loc'];
+				$userbio = $_POST['bio'];
+				
+				$username = trim($username);
+				$location = trim($location);
+				$userbio = trim($userbio);
+				
+
+				//perform SQL query
+				$query = "INSERT INTO USERS VALUES ('$username', '$location', '$bio');";
+				$result = mysqli_query($link, $query)
+						or die("Username {$username} is already in use.");
+				
+				// success message & display review
+				echo "<p>New user created successfully.</p>";
+
+				//Free result set
+				mysqli_free_result($result);
+
+				//close connection
+				mysqli_close($link);
+			?>
 			
 		</div>
 	</div>
