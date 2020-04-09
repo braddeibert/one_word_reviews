@@ -35,8 +35,8 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
-				<form class="form-inline" action="./result.php">
-					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
+				<form class="form-inline" action="./result.php" method="post">
+					<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search all reviews">
 					<button class="btn btn-success" type="submit">Go</button>
 				</form>
 			</ul>
@@ -49,13 +49,16 @@
 				// connect to database
 				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
 				   or die('Could not connect ');
+				   
+				$search = $_POST['search'];
+				$search = trim($search);
 
 				//perform SQL query
 				$query = 'SELECT title, year_released FROM CONTENT, MOVIES WHERE CONTENT.contId = MOVIES.contId ORDER BY year_released DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				
-				echo '<h2>Search results</h2>\n';
+				echo '<h2>Search results for {$search}:</h2>\n';
 
 				//print results in html
 				echo " <table class='table'>\n";
