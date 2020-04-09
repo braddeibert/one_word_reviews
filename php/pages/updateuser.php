@@ -50,7 +50,7 @@
 			?>
 			
 			<!-- form for sumbitting review -->
-			<form action="./updateuser.php?user=<?php $_GET['user']; ?>" method="post">
+			<form action="./updateuser.php?user=<?php echo "$_GET['user']"; ?>" method="post">
 				<div class="form-group">
 					<label for="location">Location:</label>
 					<input type="text" name="loc" class="form-control" placeholder="Your location">
