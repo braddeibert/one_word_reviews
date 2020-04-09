@@ -54,13 +54,13 @@
 				$review = $_POST['word'];
 				$username = $_POST['uname'];
 				
-				if ($review contains ' ') {
+				if (strpos(' ', $review) !== false) {
 					die('Review must be one word!');
 				}
 			
-				$validateContent = "SELECT contId FROM CONTENT WHERE title = ('$title');";
+				$validateContent = "SELECT contId FROM CONTENT WHERE title = '$title';";
 				$test = mysqli_query($link, $validateContent)
-						or die("Query failed - content not in db");
+						or die("Query failed ");
 						
 
 				//perform SQL query
