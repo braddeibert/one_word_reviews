@@ -70,18 +70,18 @@
 				if ($test->num_rows > 0) {
 					$id = $test->fetch_array(MYSQLI_NUM);
 				} else {
-					die("Content does not exist in db ");
+					die("Content {$title} does not exist in db ");
 				}
 
 				//perform SQL query
 				$query = "INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$id[0]', '$review');";
 				$result = mysqli_query($link, $query)
-						or die("Query failed ");
+						or die("Query failed -- user {$username} does not exist");
 				
 				// success message & display review
 				echo "<h1 class='display-3'>{$title} was {$review}. </h1>";
 				echo "<h1 class='display-5'>-{$username} </h1>";
-				echo "<p>review submitted successfully</p>";
+				echo "<br><p>review submitted successfully</p>";
 
 				//Free result set
 				mysqli_free_result($test);

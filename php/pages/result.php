@@ -58,7 +58,7 @@
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				
-				echo '<h2>Search results for {$search}:</h2>\n';
+				echo "<h2>Search results for {$search}</h2>\n";
 
 				//print results in html
 				echo " <table class='table'>\n";
