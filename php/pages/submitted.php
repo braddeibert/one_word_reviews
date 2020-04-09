@@ -49,15 +49,19 @@
 				// connect to database
 				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
 				   or die('Could not connect ');
-
+				
+				// get form submissions
 				$title = $_POST['title'];
 				$review = $_POST['word'];
 				$username = $_POST['uname'];
 				
+				$title = trim($title);
+				$review = trim($review);
+				$username = trim($username);
+				
 				if (strpos(' ', $review) !== false) {
 					die('Review must be one word!');
 				}
-				echo 'review is one word'
 			
 				$validateContent = "SELECT contId FROM CONTENT WHERE title = '$title';";
 				$test = mysqli_query($link, $validateContent)
@@ -66,7 +70,7 @@
 				if ($test->num_rows > 0) {
 					$id = $test->fetch_array(MYSQLI_NUM);
 				} else {
-					die("No such content ");
+					die("Content does not exist in db ");
 				}
 
 				//perform SQL query
@@ -74,9 +78,12 @@
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				
-				echo 'Review submitted!';
+				// success message & display review
+				echo '<h2>Review submitted!</h2>\n';
+				echo "'$title' was '$review'. -'$username'";
 
 				//Free result set
+				mysqli_free_result($test);
 				mysqli_free_result($result);
 
 				//close connection
