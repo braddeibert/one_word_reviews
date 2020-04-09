@@ -12,7 +12,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 <body>
-	<div class="container-fluid" style="padding: 0px;">
+	<div class="container-fluid" id="viewport" style="padding: 0px;">
 		<div class="navbar navbar-expand-lg bg-light navbar-light">
 			<a class="navbar-brand mb-0 h1" id="brand">word.</a>
 			
@@ -20,7 +20,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="../index.php">Home</a>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item active">
 					<a class="nav-link" href="./review.php">Review</a>
 				</li>
 				<li class="nav-item">
@@ -32,7 +32,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./music.php">Music</a>
 				</li>
-				<li class="nav-item active">
+				<li class="nav-item">
 					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
 				<form class="form-inline" action="result.php">
@@ -41,47 +41,9 @@
 				</form>
 			</ul>
 		</div>
-	
+
 		<div class="container">
-			<h2>All Contributors</h2>
-			
-			<?php
-				// connect to database
-				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
-				   or die('Could not connect ');
-
-				//perform SQL query
-				$query = ' SELECT fname, lname, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY COUNT(*) DESC;';
-				$result = mysqli_query($link, $query)
-						or die("Query failed ");
-
-				//print results in html
-				echo " <table class='table'>\n";
-				
-				//headings
-				echo "\t<thead>\n";
-				echo "\t\t<th>First Name</th>\n";
-				echo "\t\t<th>Last Name</th>\n";
-				echo "\t\t<th>Contributions (#)</th>\n";
-				echo "\t</thead>\n";
-				
-				//data
-				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-						echo "\t<tr>\n";
-						foreach ($line as $col_value) {
-								echo "\t\t<td>$col_value</td>\n";
-						}
-						echo "\t</tr>\n";
-				}
-				echo "</table>\n";
-
-				//Free result set
-				mysqli_free_result($result);
-
-				//close connection
-				mysqli_close($link);
-			?>
-			
+			Write a review
 		</div>
 	</div>
 </body>

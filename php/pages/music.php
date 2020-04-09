@@ -21,6 +21,9 @@
 					<a class="nav-link" href="../index.php">Home</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link" href="./review.php">Review</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="./movies.php">Movies</a>
 				</li>
 				<li class="nav-item">
@@ -59,7 +62,7 @@
 				echo "\t<thead>\n";
 				echo "\t\t<th>Title</th>\n";
 				echo "\t\t<th>Year Released</th>\n";
-				echo "\t\t<th>Reviews (#</th>\n";
+				echo "\t\t<th>Reviews (#)</th>\n";
 				echo "\t</thead>\n";
 				
 				//data
