@@ -61,10 +61,10 @@
 					}
 				
 				//headings
-				echo "\t<thead>\n"
-				echo "\t\t<th>Album Title</th>\n"
-				echo "\t\t<th>Year Released</th>\n"
-				echo "\t</thead>\n"
+				echo "\t<thead>\n";
+				echo "\t\t<th>Album Title</th>\n";
+				echo "\t\t<th>Year Released</th>\n";
+				echo "\t</thead>\n";
 				
 				//data
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
