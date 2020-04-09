@@ -87,7 +87,7 @@
 				}
 				
 				// search REVIEWS table for search term
-				$query = "SELECT title, word, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author AND word = '$search' ORDER BY time_submitted DESC;";
+				$query = "SELECT title, word, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author AND LOCATE('$search', word) > 0 ORDER BY time_submitted DESC;";
 				$reviewresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 						
