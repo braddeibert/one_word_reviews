@@ -43,21 +43,21 @@
 		</div>
 
 		<div class="container">
-			<h2>Review</h2>
+			<h2>New User</h2>
 			
 			<!-- form for sumbitting review -->
-			<form action="./submitted.php" method="post">
+			<form action="./newuser.php" method="post">
 				<div class="form-group">
-					<label for="title">Title:</label>
-					<input type="text" name="title" class="form-control" placeholder="Title">
+					<label for="username">Username:</label>
+					<input type="text" name="uname" class="form-control" placeholder="Username">
 				</div>
 				<div class="form-group">
-					<label for="review">Word:</label>
-					<input type="text" name="word" class="form-control" placeholder="Review">
+					<label for="location">Location:</label>
+					<input type="text" name="loc" class="form-control" placeholder="Your location">
 				</div>
 				<div class="form-group">
-					<label for="username">Username:	<a href="./newuser.php">Create a new user</a></label>
-					<input type="text" name="uname" class="form-control" placeholder="Author">
+					<label for="bio">Bio:</label>
+					<input type="text" name="bio" class="form-control" placeholder="Write bio here...">
 				</div>
 				<button type="submit" class="btn btn-success">Submit</button>
 			</form>
