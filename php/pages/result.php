@@ -21,7 +21,7 @@
 					<a class="nav-link" href="../index.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./review.php">Review</a>
+					<a class="nav-link" href="./review.php">Reviews</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="./movies.php">Movies</a>
@@ -52,40 +52,75 @@
 				   
 				$search = $_POST['search'];
 				$search = trim($search);
+				
+				echo "<h2>Search results for '{$search}'</h2>\n";
 
 				// search CONTENT table for search term
 				$query = "SELECT title, producer, year_released FROM CONTENT WHERE LOCATE('$search', title) > 0;";
-				$result = mysqli_query($link, $query)
+				$contentresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 				
-				echo "<h2>Search results for '{$search}'</h2>\n";
+				echo "<h2>Content matching '{$search}'</h2>\n";
 				
-				if ($result->num_rows == 0) {
-					die("No results found.");
+				if ($contentresult->num_rows == 0) {
+					echo "No results found.";
+				} else {
+					//print content search results in html
+					echo " <table class='table'>\n";
+					
+					//headings
+					echo "\t<thead>\n";
+					echo "\t\t<th>Title</th>\n";
+					echo "\t\t<th>Producer</th>\n";
+					echo "\t\t<th>Year Released</th>\n";
+					echo "\t</thead>\n";
+					
+					//data
+					while ($line = mysqli_fetch_array($contentresult, MYSQLI_ASSOC)) {
+							echo "\t<tr>\n";
+							foreach ($line as $col_value) {
+									echo "\t\t<td>$col_value</td>\n";
+							}
+							echo "\t</tr>\n";
+					}
+					echo "</table>\n";
 				}
-
-				//print results in html
-				echo " <table class='table'>\n";
 				
-				//headings
-				echo "\t<thead>\n";
-				echo "\t\t<th>Title</th>\n";
-				echo "\t\t<th>Producer</th>\n";
-				echo "\t\t<th>Year Released</th>\n";
-				echo "\t</thead>\n";
+				// search REVIEWS table for search term
+				$query = "SELECT title, word, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author AND word = '$search' ORDER BY time_submitted DESC;";
+				$reviewresult = mysqli_query($link, $query)
+						or die("Query failed - no content found");
+						
+						
+				echo "<h2>Reviews matching '{$search}'</h2>\n";
 				
-				//data
-				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-						echo "\t<tr>\n";
-						foreach ($line as $col_value) {
-								echo "\t\t<td>$col_value</td>\n";
-						}
-						echo "\t</tr>\n";
+				if ($reviewresult->num_rows == 0) {
+					echo "No results found.";
+				} else {
+					//print review search results in html
+					echo " <table class='table'>\n";
+					
+					//headings
+					echo "\t<thead>\n";
+					echo "\t\t<th>Title</th>\n";
+					echo "\t\t<th>Producer</th>\n";
+					echo "\t\t<th>Year Released</th>\n";
+					echo "\t</thead>\n";
+					
+					//data
+					while ($line = mysqli_fetch_array($reviewresult, MYSQLI_ASSOC)) {
+							echo "\t<tr>\n";
+							foreach ($line as $col_value) {
+									echo "\t\t<td>$col_value</td>\n";
+							}
+							echo "\t</tr>\n";
+					}
+					echo "</table>\n";
 				}
-				echo "</table>\n";
 
 				//Free result set
-				mysqli_free_result($result);
+				mysqli_free_result($contentresult);
+				mysqli_free_result($reviewresult);
 
 				//close connection
 				mysqli_close($link);

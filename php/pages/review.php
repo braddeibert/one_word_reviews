@@ -21,7 +21,7 @@
 					<a class="nav-link" href="../index.php">Home</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="./review.php">Review</a>
+					<a class="nav-link" href="./review.php">Reviews</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./movies.php">Movies</a>
@@ -59,7 +59,7 @@
 				
 				//headings
 				echo "\t<thead>\n";
-				echo "\t\t<th>Title<\th>\n";
+				echo "\t\t<th>Title</th>\n";
 				echo "\t\t<th>Verdict</th>\n";
 				echo "\t\t<th>Submitted By</th>\n";
 				echo "\t\t<th>Time</th>\n";
@@ -81,7 +81,10 @@
 				//close connection
 				mysqli_close($link);
 			?>
-		
+				
+		</div>
+
+		<div class="container">
 			<h4>Submit a review</h4>
 			<!-- form for sumbitting review -->
 			<form action="./submitted.php" method="post">

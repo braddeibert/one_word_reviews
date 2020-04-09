@@ -21,7 +21,7 @@
 					<a class="nav-link" href="../index.php">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./review.php">Review</a>
+					<a class="nav-link" href="./review.php">Reviews</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./movies.php">Movies</a>

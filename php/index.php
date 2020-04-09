@@ -24,7 +24,7 @@
 					<a class="nav-link" href="./pages/admin.html">ADMIN</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="./pages/review.php">Review</a>
+					<a class="nav-link" href="./pages/review.php">Reviews</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="./pages/movies.php">Movies</a>
