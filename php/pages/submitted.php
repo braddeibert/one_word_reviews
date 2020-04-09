@@ -80,7 +80,10 @@
 				
 				// success message & display review
 				echo '<h2>Review submitted!</h2>\n';
-				echo "'$title' was '$review'. -'$username'";
+				echo "<blockquote class='blockquote'>\n";
+				echo "\t<p>$title was $review.</p>\n";
+				echo "\t<footer class="blockquote-footer">$username</footer>\n";
+				echo "</blockquote>\n";
 
 				//Free result set
 				mysqli_free_result($test);
