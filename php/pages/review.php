@@ -41,68 +41,70 @@
 				</form>
 			</ul>
 		</div>
-
+		
 		<div class="container">
-			<h3>Latest Reviews</h3>
-			<?php
-				// connect to database
-				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
-				   or die('Could not connect ');
+			<div class="container">
+				<h3>Latest Reviews</h3>
+				<?php
+					// connect to database
+					$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+					   or die('Could not connect ');
 
-				// show most recent reviews
-				$query = "SELECT title, word, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author ORDER BY time_submitted DESC;";
-				$result = mysqli_query($link, $query)
-						or die("Query failed - no content found");
+					// show most recent reviews
+					$query = "SELECT title, word, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author ORDER BY time_submitted DESC;";
+					$result = mysqli_query($link, $query)
+							or die("Query failed - no content found");
 
-				//print results in html
-				echo " <table class='table'>\n";
+					//print results in html
+					echo " <table class='table'>\n";
+					
+					//headings
+					echo "\t<thead>\n";
+					echo "\t\t<th>Title</th>\n";
+					echo "\t\t<th>Verdict</th>\n";
+					echo "\t\t<th>Author</th>\n";
+					echo "\t\t<th>Time Submitted</th>\n";
+					echo "\t</thead>\n";
+					
+					//data
+					while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+							echo "\t<tr>\n";
+							foreach ($line as $col_value) {
+									echo "\t\t<td>$col_value</td>\n";
+							}
+							echo "\t</tr>\n";
+					}
+					echo "</table>\n";
+
+					//Free result set
+					mysqli_free_result($result);
+
+					//close connection
+					mysqli_close($link);
+				?>
+					
+			</div>
+
+			<div class="container">
+				<h4>Submit a review</h4>
+				<!-- form for sumbitting review -->
+				<form action="./submitted.php" method="post">
+					<div class="form-group">
+						<label for="title">Title:</label>
+						<input type="text" name="title" class="form-control" placeholder="Title">
+					</div>
+					<div class="form-group">
+						<label for="review">Word:</label>
+						<input type="text" name="word" class="form-control" placeholder="Review">
+					</div>
+					<div class="form-group">
+						<label for="username">Username:	<a href="./newuser.php">Create a new user</a></label>
+						<input type="text" name="uname" class="form-control" placeholder="Author">
+					</div>
+					<button type="submit" class="btn btn-success">Submit</button>
+				</form>
 				
-				//headings
-				echo "\t<thead>\n";
-				echo "\t\t<th>Title</th>\n";
-				echo "\t\t<th>Verdict</th>\n";
-				echo "\t\t<th>Author</th>\n";
-				echo "\t\t<th>Time Submitted</th>\n";
-				echo "\t</thead>\n";
-				
-				//data
-				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-						echo "\t<tr>\n";
-						foreach ($line as $col_value) {
-								echo "\t\t<td>$col_value</td>\n";
-						}
-						echo "\t</tr>\n";
-				}
-				echo "</table>\n";
-
-				//Free result set
-				mysqli_free_result($result);
-
-				//close connection
-				mysqli_close($link);
-			?>
-				
-		</div>
-
-		<div class="container">
-			<h4>Submit a review</h4>
-			<!-- form for sumbitting review -->
-			<form action="./submitted.php" method="post">
-				<div class="form-group">
-					<label for="title">Title:</label>
-					<input type="text" name="title" class="form-control" placeholder="Title">
-				</div>
-				<div class="form-group">
-					<label for="review">Word:</label>
-					<input type="text" name="word" class="form-control" placeholder="Review">
-				</div>
-				<div class="form-group">
-					<label for="username">Username:	<a href="./newuser.php">Create a new user</a></label>
-					<input type="text" name="uname" class="form-control" placeholder="Author">
-				</div>
-				<button type="submit" class="btn btn-success">Submit</button>
-			</form>
-			
+			</div>
 		</div>
 	</div>
 </body>

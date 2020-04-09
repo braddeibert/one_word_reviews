@@ -33,7 +33,7 @@
 	// Delete user
 	$query = "DELETE FROM USERS WHERE username = '$username';";
 	$result = mysqli_query($link, $query)
-			or die("Query failed: no user '{$username}' found ");
+			or die("Query failed: no user '{$username}' found. Must match existing username. ");
 	
 	// success message & display review
 	echo "<p>User {$username} successfully removed.</p>";
