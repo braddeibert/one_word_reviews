@@ -35,7 +35,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
-				<form class="form-inline" action="result.php">
+				<form class="form-inline" action="./result.php">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
 					<button class="btn btn-success" type="submit">Go</button>
 				</form>
