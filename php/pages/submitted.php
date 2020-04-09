@@ -59,7 +59,7 @@
 				$review = trim($review);
 				$username = trim($username);
 				
-				if (strpos(' ', $review) !== false) {
+				if (strpos($review, ' ') !== false) {
 					die('Review must be one word!');
 				}
 			
@@ -79,7 +79,8 @@
 						or die("Query failed ");
 				
 				// success message & display review
-				echo "<h1 class='display-3'>{$title} was {$review}. -{$username}</h1>";
+				echo "<h1 class='display-3'>{$title} was {$review}. </h1>";
+				echo "<h1 class='display-5'>-{$username} </h1>";
 				echo "<p>review submitted successfully</p>";
 
 				//Free result set
