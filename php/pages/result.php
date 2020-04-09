@@ -53,12 +53,12 @@
 				$search = $_POST['search'];
 				$search = trim($search);
 
-				//perform SQL query
-				$query = 'SELECT title, year_released FROM CONTENT, MOVIES WHERE CONTENT.contId = MOVIES.contId ORDER BY year_released DESC;';
+				// search CONTENT table for search term
+				$query = "SELECT title FROM CONTENT WHERE LOCATE('$search', title) > 0;";
 				$result = mysqli_query($link, $query)
-						or die("Query failed ");
+						or die("Query failed - no content found");
 				
-				echo "<h2>Search results for {$search}</h2>\n";
+				echo "<h2>Search results for '{$search}'</h2>\n";
 
 				//print results in html
 				echo " <table class='table'>\n";
