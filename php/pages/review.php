@@ -46,18 +46,52 @@
 			<h2>Review</h2>
 			
 			<!-- form for sumbitting review -->
-			<form action="./review.php">
+			<form class="text-left" action="./review.php" method="post">
 				<div class="form-group">
 					<label for="title">Title:</label>
-					<input type="title" class="form-control" placeholder="Enter content title">
+					<input type="text" name="title" class="form-control" placeholder="Title">
 				</div>
 				<div class="form-group">
 					<label for="review">Word:</label>
-					<input type="review" class="form-control" placeholder="Enter your review!">
+					<input type="text" name="word" class="form-control" placeholder="Review">
+				</div>
+				<div class="form-group">
+					<label for="username">Username:</label>
+					<input type="text" name="uname" class="form-control" placeholder="Author">
 				</div>
 				<button type="submit" class="btn btn-success">Submit</button>
 			</form>
 			
+			<?php
+				// connect to database
+				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+				   or die('Could not connect ');
+
+				$title = $_POST['title'];
+				$review = $_POST['word'];
+				$username = $_POST['uname'];
+				
+				if ($review contains ' ') {
+					die('Review must be one word!');
+				}
+			
+				$validateContent = 'SELECT contId FROM CONTENT WHERE title = ('$title');';
+				$test = mysqli_query($link, $validateContent)
+						or die("Query failed -- content not in db");
+
+				//perform SQL query
+				$query = 'INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$test', '$review');';
+				$result = mysqli_query($link, $query)
+						or die("Query failed ");
+				
+				echo 'Review submitted!';
+
+				//Free result set
+				mysqli_free_result($result);
+
+				//close connection
+				mysqli_close($link);
+			?>
 			
 		</div>
 	</div>
