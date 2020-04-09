@@ -58,13 +58,13 @@
 					die('Review must be one word!');
 				}
 			
-				$validateContent = 'SELECT contId FROM CONTENT WHERE title = ('$title');';
+				$validateContent = "SELECT contId FROM CONTENT WHERE title = ('$title');";
 				$test = mysqli_query($link, $validateContent)
 						or die("Query failed - content not in db");
 						
 
 				//perform SQL query
-				$query = 'INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$test', '$review');';
+				$query = "INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$test', '$review');";
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				
