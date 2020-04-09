@@ -46,18 +46,16 @@
 				// connect to database
 				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
 				   or die('Could not connect ');
-				echo "Connected successfully";
 
 				//perform SQL query
 				$query = 'SELECT title, year_released FROM CONTENT, MOVIES WHERE CONTENT.contId = MOVIES.contId ORDER BY year_released DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
-				echo "query ok";
 				
-				echo '<h2>Search results for ''</h2>'
+				echo '<h2>Search results for ''</h2>\n'
 
 				//print results in html
-				echo " <table border='1'>\n";
+				echo " <table class="table">\n";
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 						echo "\t<tr>\n";
 						foreach ($line as $col_value) {

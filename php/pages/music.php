@@ -32,7 +32,7 @@
 				<li class="nav-item">
 					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
-				<form class="form-inline" action="php-goes-here.php">
+				<form class="form-inline" action="result.php">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
 					<button class="btn btn-success" type="submit">Go</button>
 				</form>
@@ -46,16 +46,14 @@
 				// connect to database
 				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
 				   or die('Could not connect ');
-				echo "Connected successfully";
 
 				//perform SQL query
 				$query = 'SELECT title, year_released FROM CONTENT, ALBUMS WHERE CONTENT.contId = ALBUMS.contId ORDER BY year_released DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
-				echo "query ok";
 
 				//print results in html
-				echo " <table border='1'>\n";
+				echo " <table class="table">\n";
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 						echo "\t<tr>\n";
 						foreach ($line as $col_value) {

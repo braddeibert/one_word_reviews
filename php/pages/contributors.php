@@ -32,7 +32,7 @@
 				<li class="nav-item active">
 					<a class="nav-link" href="./contributors.php">People</a>
 				</li>
-				<form class="form-inline" action="php-goes-here.php">
+				<form class="form-inline" action="result.php">
 					<input class="form-control mr-sm-2" type="text" placeholder="Search all reviews">
 					<button class="btn btn-success" type="submit">Go</button>
 				</form>
@@ -53,7 +53,7 @@
 						or die("Query failed ");
 
 				//print results in html
-				echo " <table border='1'>\n";
+				echo " <table class="table">\n";
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 						echo "\t<tr>\n";
 						foreach ($line as $col_value) {
