@@ -60,7 +60,7 @@
 				$contentresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 				
-				echo "<h2>Content matching '{$search}'</h2>\n";
+				echo "<h4>Content matching '{$search}'</h4>\n";
 				
 				if ($contentresult->num_rows == 0) {
 					echo "No results found.";
@@ -92,7 +92,7 @@
 						or die("Query failed - no content found");
 						
 						
-				echo "<h2>Reviews matching '{$search}'</h2>\n";
+				echo "<h4>Reviews matching '{$search}'</h4>\n";
 				
 				if ($reviewresult->num_rows == 0) {
 					echo "No results found.";
@@ -118,10 +118,35 @@
 					}
 					echo "</table>\n";
 				}
+				
+				// search USERS table for search term
+				$query = "SELECT username FROM USERS WHERE LOCATE('$search', username) > 0;";
+				$userresult = mysqli_query($link, $query)
+						or die("Query failed - no content found");
+				
+				echo "<h4>Users matching '{$search}'</h4>\n";
+				
+				if ($userresult->num_rows == 0) {
+					echo "No results found.";
+				} else {
+					//print content search results in html
+					echo " <table class='table'>\n";
+					
+					//data
+					while ($line = mysqli_fetch_array($userresult, MYSQLI_ASSOC)) {
+							echo "\t<ul>\n";
+							foreach ($line as $col_value) {
+									echo "\t\t<li>$col_value</li>\n";
+							}
+							echo "\t</ul>\n";
+					}
+					echo "</table>\n";
+				}
 
 				//Free result set
 				mysqli_free_result($contentresult);
 				mysqli_free_result($reviewresult);
+				mysqli_free_result($userresult);
 
 				//close connection
 				mysqli_close($link);
