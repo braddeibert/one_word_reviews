@@ -46,11 +46,11 @@
 			
 			<?php 
 				$username = $_GET['user'];
-				echo "<h1 class='display-4'>$username</h1>\n";
+				echo "<h1 class='display-4'>Edit info for $username</h1>\n";
 			?>
 			
 			<!-- form for sumbitting review -->
-			<form action="./updateuser.php?<?php $_GET['user'] ?>" method="post">
+			<form action="./updateuser.php?<?php $_GET['user']; ?>" method="post">
 				<div class="form-group">
 					<label for="location">Location:</label>
 					<input type="text" name="loc" class="form-control" placeholder="Your location">
@@ -81,7 +81,7 @@
 				}
 
 				//perform SQL query
-				$query = "UPDATE USERS VALUES ('$username', '$location', '$userbio');";
+				$query = "UPDATE USERS SET location = '$location', bio = '$userbio' WHERE username = '$username';";
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 				
