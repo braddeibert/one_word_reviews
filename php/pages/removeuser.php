@@ -31,9 +31,9 @@
 	}
 	
 	// Delete user
-	$query = "DELETE FROM USERS WHERE username = '$username' CASCADE;";
+	$query = "DELETE FROM USERS WHERE username = '$username';";
 	$result = mysqli_query($link, $query)
-			or die("Query failed: no user found ");
+			or die("Query failed: no user '{$username}' found ");
 	
 	// success message & display review
 	echo "<p>User {$username} successfully removed.</p>";
