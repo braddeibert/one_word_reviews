@@ -57,11 +57,6 @@
 				//print results in html
 				echo " <table class='table'>\n";
 				
-				//headings
-				echo "\t<thead>\n";
-				echo "\t\t<th>First Name</th>\n";
-				echo "\t\t<th>Last Name</th>\n";
-				echo "\t</thead>\n";
 				
 				//data
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {

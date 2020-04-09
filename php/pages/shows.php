@@ -48,7 +48,7 @@
 				   or die('Could not connect ');
 
 				//perform SQL query
-				$query = 'SELECT title, year_released FROM CONTENT, SHOWS WHERE CONTENT.contId = SHOWS.contId ORDER BY year_released DESC;';
+				$query = 'SELECT title, year_released, COUNT(*) FROM CONTENT, SHOWS, REVIEWS WHERE CONTENT.contId = SHOWS.contId AND CONTENT.contId = REVIEWS.contId GROUP BY CONTENT.contId ORDER BY COUNT(*) DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 
@@ -59,6 +59,7 @@
 				echo "\t<thead>\n";
 				echo "\t\t<th>Series Name</th>\n";
 				echo "\t\t<th>First Aired</th>\n";
+				echo "\t\t<th>Reviews (#)</th>\n";
 				echo "\t</thead>\n";
 				
 				//data

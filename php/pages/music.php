@@ -48,22 +48,18 @@
 				   or die('Could not connect ');
 
 				//perform SQL query
-				$query = 'SELECT title, year_released FROM CONTENT, ALBUMS WHERE CONTENT.contId = ALBUMS.contId ORDER BY year_released DESC;';
+				$query = 'SELECT title, year_released, COUNT(*) FROM CONTENT, ALBUMS, REVIEWS WHERE CONTENT.contId = ALBUMS.contId AND CONTENT.contId = REVIEWS.contId GROUP BY CONTENT.contId ORDER BY COUNT(*) DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 
 				//print results in html
 				echo " <table class='table'>\n";
 				
-				$query = mysql_query("DESCRIBE `MyTable`");
-					while($result = mysql_fetch_assoc($query)) {
-						echo $result['Field'] . "\n";
-					}
-				
 				//headings
 				echo "\t<thead>\n";
-				echo "\t\t<th>Album Title</th>\n";
+				echo "\t\t<th>Title</th>\n";
 				echo "\t\t<th>Year Released</th>\n";
+				echo "\t\t<th>Reviews (#</th>\n";
 				echo "\t</thead>\n";
 				
 				//data
