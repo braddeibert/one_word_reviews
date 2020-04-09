@@ -129,18 +129,14 @@
 				if ($userresult->num_rows == 0) {
 					echo "No results found.";
 				} else {
-					//print content search results in html
-					echo " <table class='table'>\n";
-					
-					//data
+					// print users in ul
+					echo "<ul>\n";
 					while ($line = mysqli_fetch_array($userresult, MYSQLI_ASSOC)) {
-							echo "\t<ul>\n";
 							foreach ($line as $col_value) {
-									echo "\t\t<li>$col_value</li>\n";
+									echo "\t<li>$col_value <a href='./viewuser.php?user=$col_value'>View</a></li>\n";
 							}
-							echo "\t</ul>\n";
 					}
-					echo "</table>\n";
+					echo "</ul>\n";
 				}
 
 				//Free result set
