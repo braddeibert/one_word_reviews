@@ -56,7 +56,7 @@
 						or die("Query failed - no user found");
 				
 				// print info
-				$info = mysqli_fetch_array($result, MYSQLI_ASSOC);
+				$info = $result->fetch_array(MYSQLI_NUM);
 				
 				echo "<h1 class='display-3'>$info[0]</h1>\n";
 				echo "<p>$info[1]</p>\n";
