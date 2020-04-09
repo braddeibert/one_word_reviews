@@ -45,13 +45,14 @@
 		<div class="container">
 			
 			<?php 
-				$username = $_GET['uname'];
+				$username = $_GET['user'];
 				echo "<h1 class='display-4'>Edit info for {$username}</h1>\n";
 			?>
 			
 			<!-- form for sumbitting review -->
 			<form action="./updateuser.php" method="post">
-				<input type="text" name="user" value="<?php echo $_GET['$uname']; ?>">
+				<input type="hidden" name="user" value="<?php echo $_GET['user']; ?>">
+				
 				<div class="form-group">
 					<label for="location">Location:</label>
 					<input type="text" name="loc" class="form-control" placeholder="Your location">
