@@ -43,7 +43,6 @@
 		</div>
 
 		<div class="container">
-			<h2>Review Status</h2>
 			
 			<?php
 				// connect to database
@@ -70,13 +69,13 @@
 				if ($test->num_rows > 0) {
 					$id = $test->fetch_array(MYSQLI_NUM);
 				} else {
-					die("Content {$title} does not exist in db ");
+					die("Content {$title} does not exist ");
 				}
 
 				//perform SQL query
 				$query = "INSERT INTO REVIEWS (author, contId, word) VALUES ('$username', '$id[0]', '$review');";
 				$result = mysqli_query($link, $query)
-						or die("Query failed -- user {$username} does not exist");
+						or die("User {$username} does not exist");
 				
 				// success message & display review
 				echo "<h1 class='display-3'>{$title} was {$review}. </h1>";

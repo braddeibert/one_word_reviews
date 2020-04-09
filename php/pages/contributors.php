@@ -51,7 +51,7 @@
 				   or die('Could not connect ');
 
 				//perform SQL query
-				$query = 'SELECT fname, lname, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY COUNT(*) DESC;';
+				$query = 'SELECT fname, lname, birthdate, hometown, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY COUNT(*) DESC;';
 				$result = mysqli_query($link, $query)
 						or die("Query failed ");
 
@@ -62,6 +62,8 @@
 				echo "\t<thead>\n";
 				echo "\t\t<th>First Name</th>\n";
 				echo "\t\t<th>Last Name</th>\n";
+				echo "\t\t<th>Birthdate</th>\n";
+				echo "\t\t<th>Hometown</th>\n";
 				echo "\t\t<th>Contributions (#)</th>\n";
 				echo "\t</thead>\n";
 				

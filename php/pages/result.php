@@ -54,7 +54,7 @@
 				$search = trim($search);
 
 				// search CONTENT table for search term
-				$query = "SELECT title FROM CONTENT WHERE LOCATE('$search', title) > 0;";
+				$query = "SELECT title, producer, year_released FROM CONTENT WHERE LOCATE('$search', title) > 0;";
 				$result = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 				
@@ -62,6 +62,13 @@
 
 				//print results in html
 				echo " <table class='table'>\n";
+				
+				//headings
+				echo "\t<thead>\n";
+				echo "\t\t<th>Title</th>\n";
+				echo "\t\t<th>Producer</th>\n";
+				echo "\t\t<th>Year Released</th>\n";
+				echo "\t</thead>\n";
 				
 				//data
 				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
