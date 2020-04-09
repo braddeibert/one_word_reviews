@@ -76,7 +76,7 @@
 				$location = trim($location);
 				$userbio = trim($userbio);
 				
-				if ($username == '') {
+				if ($userbio == '' or $location == '') {
 					exit();
 				}
 
