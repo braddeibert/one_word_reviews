@@ -61,8 +61,8 @@
 				echo "\t<thead>\n";
 				echo "\t\t<th>Title</th>\n";
 				echo "\t\t<th>Verdict</th>\n";
-				echo "\t\t<th>Submitted By</th>\n";
-				echo "\t\t<th>Time</th>\n";
+				echo "\t\t<th>Author</th>\n";
+				echo "\t\t<th>Time Submitted</th>\n";
 				echo "\t</thead>\n";
 				
 				//data

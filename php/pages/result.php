@@ -103,8 +103,9 @@
 					//headings
 					echo "\t<thead>\n";
 					echo "\t\t<th>Title</th>\n";
-					echo "\t\t<th>Producer</th>\n";
-					echo "\t\t<th>Year Released</th>\n";
+					echo "\t\t<th>Review</th>\n";
+					echo "\t\t<th>Author</th>\n";
+					echo "\t\t<th>Time Submitted</th>\n";
 					echo "\t</thead>\n";
 					
 					//data
