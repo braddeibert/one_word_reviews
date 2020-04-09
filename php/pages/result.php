@@ -61,7 +61,7 @@
 				echo "<h2>Search results for '{$search}'</h2>\n";
 				
 				if ($result->num_rows == 0) {
-					die("No results found.")
+					die("No results found.");
 				}
 
 				//print results in html

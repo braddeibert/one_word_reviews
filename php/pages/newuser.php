@@ -76,6 +76,9 @@
 				$location = trim($location);
 				$userbio = trim($userbio);
 				
+				if ($username == '') {
+					exit();
+				}
 
 				//perform SQL query
 				$query = "INSERT INTO USERS VALUES ('$username', '$location', '$bio');";
