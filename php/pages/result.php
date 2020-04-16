@@ -56,7 +56,11 @@
 				// for tracking results
 				$noresult = 0;
 				
-				echo "<h2>Search results for '{$search}'</h2>\n";
+				if ($search == '') {
+					echo "<h2>Show all</h2>";
+				} else {
+					echo "<h2>Search matches for '{$search}'</h2>\n";
+				}
 
 				// search CONTENT table for search term
 				$query = "SELECT title, producer, year_released FROM CONTENT WHERE LOCATE('$search', title) > 0;";
@@ -66,9 +70,8 @@
 				
 				if ($contentresult->num_rows == 0) {
 					$noresult = $noresult + 1;
-					exit();
 				} else {
-					echo "<h4>Content matching '{$search}'</h4>\n";
+					echo "<h4>Content</h4>\n";
 
 					//print content search results in html
 					echo " <table class='table'>\n";
@@ -99,9 +102,8 @@
 				
 				if ($reviewresult->num_rows == 0) {
 					$noresult = $noresult + 1;
-					exit();
 				} else {
-					echo "<h4>Reviews matching '{$search}'</h4>\n";
+					echo "<h4>Reviews</h4>\n";
 
 					//print review search results in html
 					echo " <table class='table'>\n";
@@ -132,9 +134,8 @@
 				
 				if ($userresult->num_rows == 0) {
 					$noresult = $noresult + 1;
-					exit();
 				} else {
-					echo "<h4>Users matching '{$search}'</h4>\n";
+					echo "<h4>Users</h4>\n";
 
 					// print users in ul
 					echo "<ul>\n";
@@ -147,7 +148,7 @@
 				}
 
 				if ($noresult == 3) {
-					echo "<h4>No results found for '{$search}'</h4>\n";
+					echo "<h4>No results found.</h4>\n";
 				}
 
 				//Free result set
