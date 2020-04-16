@@ -48,6 +48,12 @@
 		<div class="jumbotron-fluid text-center" id="landing" style="">
 			<h1 id="land-title">Welcome to <strong>word.</strong></h1>
 			<h3>Easy to digest reviews for the 21st century.</h3>
+			<br>
+			<button class="btn" style="border: 1px white solid;" data-toggle="collapse" data-target="#about">About</button>
+		</div>
+
+		<div id="about" class="collapse">
+			<p>This is word. A review site that does opinion different. We are firm believers in KISS.</p>
 		</div>
 	</div>
 </body>
