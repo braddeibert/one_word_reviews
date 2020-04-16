@@ -50,11 +50,12 @@
 			<h3>Easy to digest reviews for the 21st century.</h3>
 			<br>
 			<button class="btn" style="border: 1px white solid;" data-toggle="collapse" data-target="#about">About</button>
+			
+			<div id="about" class="collapse">
+				<p>This is word, a review site that does opinion different. We are firm believers that quantity is not always quality, and it is our personal mission to make sure you never have to read a 500-word review to get a good opinion again.</p>
+			</div>
 		</div>
 
-		<div id="about" class="collapse">
-			<p>This is word. A review site that does opinion different. We are firm believers in KISS.</p>
-		</div>
 	</div>
 </body>
 </html>
