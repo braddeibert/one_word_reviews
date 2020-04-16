@@ -58,7 +58,10 @@
 				$review = trim($review);
 				$username = trim($username);
 				
-				if (strpos($review, ' ') !== false) {
+				if ($review == '') {
+					die('Review cannot be blank!');
+				}
+				elseif (strpos($review, ' ') !== false) {
 					die('Review must be one word!');
 				}
 			
@@ -78,7 +81,7 @@
 						or die("User {$username} does not exist");
 				
 				// success message & display review
-				echo "<h1 class='display-3'>{$title} was {$review}. </h1>";
+				echo "<h1 class='display-3'>{$title}: {$review}. </h1>";
 				echo "<h1 class='display-5'>-{$username} </h1>";
 				echo "<br><p>review submitted successfully</p>";
 

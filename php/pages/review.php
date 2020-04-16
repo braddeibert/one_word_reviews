@@ -90,15 +90,15 @@
 				<!-- form for sumbitting review -->
 				<form action="./submitted.php" method="post">
 					<div class="form-group">
-						<label for="title">Title: (content must be in our database)</label>
+						<label for="title">Title:</label>
 						<input type="text" name="title" class="form-control" placeholder="Title (e.g. 'Shrek')">
 					</div>
 					<div class="form-group">
-						<label for="review">Word: (review must be one word)</label>
+						<label for="review">Word:</label>
 						<input type="text" name="word" class="form-control" placeholder="Review (e.g. 'Incredible')">
 					</div>
 					<div class="form-group">
-						<label for="username">Username:	(the username of a user in our database)<a href="./newuser.php">Create a new user</a></label>
+						<label for="username">Username:<a href="./newuser.php">Create a new user</a></label>
 						<input type="text" name="uname" class="form-control" placeholder="Author (e.g. 'GrandmaSue')">
 					</div>
 					<button type="submit" class="btn btn-success">Submit</button>
