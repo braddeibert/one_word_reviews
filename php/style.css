@@ -26,3 +26,12 @@ body {
 #land-title {
 	padding-top: 10vh;
 }
+
+#about {
+	background-color: #28a745;
+}
+
+#about.p {
+	margin: 15px;
+	padding: 25px;
+}

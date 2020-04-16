@@ -49,10 +49,10 @@
 			<h1 id="land-title">Welcome to <strong>word.</strong></h1>
 			<h3>Easy to digest reviews for the 21st century.</h3>
 			<br>
-			<button class="btn" style="border: 1px white solid;" data-toggle="collapse" data-target="#about">About</button>
+			<button class="btn" style="border: 2px white solid; color: white; font-weight: 400;" data-toggle="collapse" data-target="#about">About</button>
 			
-			<div id="about" class="collapse">
-				<p>This is word, a review site that does opinion different. We are firm believers that quantity is not always quality, and it is our personal mission to make sure you never have to read a 500-word review to get a good opinion again.</p>
+			<div id="about" class="collapse container">
+				<p>This is word, a review site that does opinion different. We are firm believers that quantity is not always quality, and it is our personal mission to make sure you never have to read a 500-word review again.</p>
 			</div>
 		</div>
 
