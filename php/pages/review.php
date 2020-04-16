@@ -88,18 +88,21 @@
 			<div class="container" style="padding-top: 25px;">
 				<h4>Submit a review</h4>
 				<!-- form for sumbitting review -->
-				<form action="./submitted.php" method="post">
+				<form action="./submitted.php" class="was-validated" method="post">
 					<div class="form-group">
 						<label for="title">Title:</label>
-						<input type="text" name="title" class="form-control" placeholder="Title (e.g. 'Shrek')">
+						<input type="text" name="title" class="form-control" placeholder="Title (e.g. 'Shrek')" required>
+						<div class="invalid-feedback">Enter an existing content title.</div>
 					</div>
 					<div class="form-group">
 						<label for="review">Word:</label>
-						<input type="text" name="word" class="form-control" placeholder="Review (e.g. 'Incredible')">
+						<input type="text" name="word" class="form-control" placeholder="Review (e.g. 'Incredible')" required>
+						<div class="invalid-feedback">Review must be one word.</div>
 					</div>
 					<div class="form-group">
 						<label for="username">Username: <a href="./newuser.php">Create a new user</a></label>
-						<input type="text" name="uname" class="form-control" placeholder="Author (e.g. 'GrandmaSue')">
+						<input type="text" name="uname" class="form-control" placeholder="Author (e.g. 'GrandmaSue')" required>
+						<div class="invalid-feedback">Enter an existing author.</div>
 					</div>
 					<button type="submit" class="btn btn-success">Submit</button>
 				</form>
