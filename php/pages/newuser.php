@@ -46,10 +46,11 @@
 			<h2>New User</h2>
 			
 			<!-- form for creating a new user -->
-			<form action="./newuser.php" method="post">
+			<form action="./newuser.php" class="was-validated" method="post">
 				<div class="form-group">
 					<label for="username">Username:</label>
-					<input type="text" name="uname" class="form-control" placeholder="Username (e.g. 'JoeExotic')">
+					<input type="text" name="uname" class="form-control" placeholder="Username (e.g. 'JoeExotic')" required>
+					<div class="invalid-feedback">Username can't be blank!</div>
 				</div>
 				<div class="form-group">
 					<label for="location">Location:</label>
@@ -77,7 +78,7 @@
 				$userbio = trim($userbio);
 				
 				if ($username == '') {
-					die('Must enter a username!');
+					die('Must enter a username!')
 				}
 
 				//perform SQL query
