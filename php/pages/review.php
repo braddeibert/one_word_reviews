@@ -85,9 +85,9 @@
 					
 			</div>
 
-			<button class="btn btn-success" data-toggle="collapse" data-target="#submitReview" style="margin: 20px;">Write a Review</button>
+			<button class="btn btn-success" data-toggle="collapse" data-target="#submitReview">Write a Review</button>
 
-			<div class="collapse container" id="submitReview" style="padding-top: 25px;">
+			<div class="collapse container" id="submitReview">
 				<!-- form for sumbitting review -->
 				<form action="./submitted.php" class="was-validated" method="post">
 					<div class="form-group">

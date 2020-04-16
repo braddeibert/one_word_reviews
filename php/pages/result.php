@@ -57,9 +57,9 @@
 				$noresult = 0;
 				
 				if ($search == '') {
-					echo "<h2>Show all</h2>";
+					echo "<h2>Showing all:</h2>";
 				} else {
-					echo "<h2>Search matches for '{$search}'</h2>\n";
+					echo "<h2>All search results matching '{$search}':</h2>\n";
 				}
 
 				// search CONTENT table for search term
@@ -78,7 +78,7 @@
 					
 					//headings
 					echo "\t<thead>\n";
-					echo "\t\t<th>Title</th>\n";
+					echo "\t\t<th id='brand'>Title</th>\n";
 					echo "\t\t<th>Producer</th>\n";
 					echo "\t\t<th>Year Released</th>\n";
 					echo "\t</thead>\n";
@@ -95,9 +95,9 @@
 				}
 				
 				// search REVIEWS table for search term
-				$query = "SELECT title, word, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author AND LOCATE('$search', word) > 0 ORDER BY time_submitted DESC;";
+				$query = "SELECT word, title, username, time_submitted FROM CONTENT, USERS, REVIEWS WHERE CONTENT.contId = REVIEWS.contId AND USERS.username = REVIEWS.author AND LOCATE('$search', word) > 0 ORDER BY time_submitted DESC;";
 				$reviewresult = mysqli_query($link, $query)
-						or die("Query failed - no content found");
+						or die("Query failed - no reviews found");
 						
 				
 				if ($reviewresult->num_rows == 0) {
@@ -110,8 +110,8 @@
 					
 					//headings
 					echo "\t<thead>\n";
+					echo "\t\t<th id='brand'>Review</th>\n";
 					echo "\t\t<th>Title</th>\n";
-					echo "\t\t<th>Review</th>\n";
 					echo "\t\t<th>Author</th>\n";
 					echo "\t\t<th>Time Submitted</th>\n";
 					echo "\t</thead>\n";
@@ -130,7 +130,7 @@
 				// search USERS table for search term
 				$query = "SELECT username FROM USERS WHERE LOCATE('$search', username) > 0;";
 				$userresult = mysqli_query($link, $query)
-						or die("Query failed - no content found");
+						or die("Query failed - no users found");
 				
 				if ($userresult->num_rows == 0) {
 					$noresult = $noresult + 1;

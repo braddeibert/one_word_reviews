@@ -7,8 +7,25 @@ body {
 	height: 100%;
 }
 
+.container {
+	padding: 25px 15px;
+}
+
 h2 {
 	padding: 25px;
+}
+
+h4 {
+	padding: 10px;
+}
+
+ul {
+	list-style: none;
+}
+
+.success {
+	color: green;
+	padding-top: 10px;
 }
 
 #brand {	

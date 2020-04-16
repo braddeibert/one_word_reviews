@@ -81,9 +81,9 @@
 						or die("User {$username} does not exist, or has already reviewed {$title}.");
 				
 				// success message & display review
-				echo "<h1 class='display-3'>{$title}: {$review}. </h1>";
-				echo "<h1 class='display-5'>-{$username} </h1>";
-				echo "<br><p>Review submitted successfully</p>";
+				echo "<h1 class='display-3'>{$title}: {$review}. </h1>\n";
+				echo "<h1 class='display-5'>-{$username} </h1>\n";
+				echo "<p class='success'>Review submitted successfully</p>\n";
 
 				//Free result set
 				mysqli_free_result($test);

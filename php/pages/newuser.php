@@ -76,9 +76,9 @@
 				$username = trim($username);
 				$location = trim($location);
 				$userbio = trim($userbio);
-				
+
 				if ($username == '') {
-					die('Must enter a username!');
+					exit();
 				}
 
 				//perform SQL query
@@ -87,7 +87,7 @@
 						or die("Username {$username} is already in use.");
 				
 				// success message & display review
-				echo "<p>New user created successfully.</p>";
+				echo "<p class='success'>New user created successfully.</p>";
 
 				//Free result set
 				mysqli_free_result($result);
