@@ -38,7 +38,7 @@
 			or die("Query failed: no user '{$username}' found. Must match existing username. ");
 	
 	// success message & display review
-	echo "<p>User {$username} successfully removed.</p>";
+	echo "<p class='success'>User {$username} successfully removed.</p>";
 
 	//Free result set
 	mysqli_free_result($result);

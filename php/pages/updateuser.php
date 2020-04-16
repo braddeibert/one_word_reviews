@@ -88,7 +88,7 @@
 						or die("Query failed ");
 				
 				// success message & display review
-				echo "<p>Info updated successfully.</p>";
+				echo "<p class='success'>Info updated successfully.</p>";
 
 				//Free result set
 				mysqli_free_result($result);
