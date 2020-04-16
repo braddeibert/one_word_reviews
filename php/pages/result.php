@@ -147,7 +147,7 @@
 				}
 
 				if ($noresult == 3) {
-					echo "<h4>No results found for '{$search}'</h4>\n"
+					echo "<h4>No results found for '{$search}'</h4>\n";
 				}
 
 				//Free result set

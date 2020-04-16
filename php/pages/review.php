@@ -85,7 +85,7 @@
 					
 			</div>
 
-			<button class="btn btn-primary" data-toggle="collapse" data-target="#submitReview">Write a Review</button>
+			<button class="btn btn-success" data-toggle="collapse" data-target="#submitReview" style="margin: 20px;">Write a Review</button>
 
 			<div class="collapse" id="submitReview" style="padding-top: 25px;">
 				<!-- form for sumbitting review -->
