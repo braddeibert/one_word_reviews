@@ -7,8 +7,8 @@ body {
 	height: 100%;
 }
 
-.container {
-	padding-bottom: 25px;
+div.container {
+	padding: 25px;
 }
 
 h2 {
@@ -23,7 +23,7 @@ ul {
 	list-style: none;
 }
 
-.success {
+p.success {
 	color: green;
 	padding-top: 10px;
 }

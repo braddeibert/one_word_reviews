@@ -85,7 +85,7 @@
 					
 			</div>
 
-			<button class="btn btn-success" data-toggle="collapse" data-target="#submitReview" style="margin: 25px;">Write a Review</button>
+			<button class="btn btn-success" data-toggle="collapse" data-target="#submitReview">Write a Review</button>
 
 			<div class="collapse container" id="submitReview">
 				<!-- form for sumbitting review -->
@@ -105,7 +105,7 @@
 						<input type="text" name="uname" class="form-control" placeholder="Author (e.g. 'GrandmaSue')" required>
 						<div class="invalid-feedback">Enter an existing author.</div>
 					</div>
-					<button type="submit" class="btn btn-success" style="margin: 25px;">Submit</button>
+					<button type="submit" class="btn btn-success">Submit</button>
 				</form>
 				
 			</div>
