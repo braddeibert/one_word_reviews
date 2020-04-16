@@ -44,7 +44,7 @@
 		
 		<div class="container">
 			<div class="container">
-				<h3>Latest Reviews</h3>
+				<h2>Latest Reviews</h2>
 				<?php
 					// connect to database
 					$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
@@ -85,7 +85,7 @@
 					
 			</div>
 
-			<div class="container">
+			<div class="container" style="padding-top: 25px;">
 				<h4>Submit a review</h4>
 				<!-- form for sumbitting review -->
 				<form action="./submitted.php" method="post">
@@ -98,7 +98,7 @@
 						<input type="text" name="word" class="form-control" placeholder="Review (e.g. 'Incredible')">
 					</div>
 					<div class="form-group">
-						<label for="username">Username:<a href="./newuser.php">Create a new user</a></label>
+						<label for="username">Username: <a href="./newuser.php">Create a new user</a></label>
 						<input type="text" name="uname" class="form-control" placeholder="Author (e.g. 'GrandmaSue')">
 					</div>
 					<button type="submit" class="btn btn-success">Submit</button>

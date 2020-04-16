@@ -77,7 +77,7 @@
 				$userbio = trim($userbio);
 				
 				if ($username == '') {
-					exit();
+					die('Must enter a username!');
 				}
 
 				//perform SQL query
