@@ -3,15 +3,17 @@
 <head>
 <title>ADMIN - REMOVE USER</title>
 </head>
-<body style="background-color: black; color: red;">
+<body style="background-color: white; color: black;">
 
 <h1>Remove User</h1>
-<h3>For administrator use only</h3>
+<h3 style="color: red;">For administrator use only</h3>
 
 <form action="./removeuser.php" method="post">
-	<input name="uname" type="text" placeholder="Enter user to delete">
-	<input name="phrase" type="text" placeholder="Enter phrase">
-	<button type="submit">REMOVE</button>
+	<label for="uname">Username:</label>
+	<input name="uname" type="text" placeholder="Username (e.g. 'BIGTIMETOMMIE1')">
+	<label for="phrase">Authentication phrase:</label>
+	<input name="phrase" type="text" placeholder="123456789">
+	<button type="submit">REMOVE USER</button>
 </form>
 
 <?php

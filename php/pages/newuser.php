@@ -45,15 +45,15 @@
 		<div class="container">
 			<h2>New User</h2>
 			
-			<!-- form for sumbitting review -->
+			<!-- form for creating a new user -->
 			<form action="./newuser.php" method="post">
 				<div class="form-group">
 					<label for="username">Username:</label>
-					<input type="text" name="uname" class="form-control" placeholder="Username">
+					<input type="text" name="uname" class="form-control" placeholder="Username (e.g. 'JoeExotic')">
 				</div>
 				<div class="form-group">
 					<label for="location">Location:</label>
-					<input type="text" name="loc" class="form-control" placeholder="Your location">
+					<input type="text" name="loc" class="form-control" placeholder="Your location (e.g. 'Oklahoma, United States')">
 				</div>
 				<div class="form-group">
 					<label for="bio">Bio:</label>
