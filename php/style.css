@@ -29,9 +29,10 @@ body {
 
 #about {
 	background-color: #28a745;
+	border-radius: 0.5em;
 }
 
-#about.p {
+.p {
 	margin: 15px;
 	padding: 25px;
 }

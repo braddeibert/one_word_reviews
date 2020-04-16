@@ -52,7 +52,7 @@
 			<button class="btn" style="border: 2px white solid; color: white; font-weight: 400;" data-toggle="collapse" data-target="#about">About</button>
 			
 			<div id="about" class="collapse container">
-				<p>This is word, a review site that does opinion different. We are firm believers that quantity is not always quality, and it is our personal mission to make sure you never have to read a 500-word review again.</p>
+				<p>This is word, a review site that does opinion different. As firm believers in quality over quantity, it is our personal mission to make sure you never have to read a 500-word review to get the gist again. <br> All of our reviews are limited to a word. That's right, just one <strong>word.</strong> Read & write all the reviews you could imagine in an instant. This is reviewing for the 21st century.</p>
 			</div>
 		</div>
 
