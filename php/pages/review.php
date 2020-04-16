@@ -36,7 +36,7 @@
 					<a class="nav-link" href="./contributors.php">Contributors</a>
 				</li>
 				<form class="form-inline" action="./result.php" method="post">
-					<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search database">
+					<input class="form-control mr-sm-2" name="search" type="text" placeholder="Search all reviews">
 					<button class="btn btn-success" type="submit">Go</button>
 				</form>
 			</ul>
@@ -86,7 +86,8 @@
 			</div>
 
 			<button class="btn btn-primary" data-toggle="collapse" data-target="#submitReview">Write a Review</button>
-			<div class="container" id="submitReview" style="padding-top: 25px;">
+
+			<div class="collapse" id="submitReview" style="padding-top: 25px;">
 				<!-- form for sumbitting review -->
 				<form action="./submitted.php" class="was-validated" method="post">
 					<div class="form-group">

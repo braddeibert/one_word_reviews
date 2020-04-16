@@ -52,6 +52,9 @@
 				   
 				$search = $_POST['search'];
 				$search = trim($search);
+
+				// for tracking results
+				$noresult = 0;
 				
 				echo "<h2>Search results for '{$search}'</h2>\n";
 
@@ -60,11 +63,13 @@
 				$contentresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 				
-				echo "<h4>Content matching '{$search}'</h4>\n";
 				
 				if ($contentresult->num_rows == 0) {
-					echo "No results found.";
+					$noresult = $noresult + 1;
+					exit();
 				} else {
+					echo "<h4>Content matching '{$search}'</h4>\n";
+
 					//print content search results in html
 					echo " <table class='table'>\n";
 					
@@ -91,12 +96,13 @@
 				$reviewresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 						
-						
-				echo "<h4>Reviews matching '{$search}'</h4>\n";
 				
 				if ($reviewresult->num_rows == 0) {
-					echo "No results found.";
+					$noresult = $noresult + 1;
+					exit();
 				} else {
+					echo "<h4>Reviews matching '{$search}'</h4>\n";
+
 					//print review search results in html
 					echo " <table class='table'>\n";
 					
@@ -124,11 +130,12 @@
 				$userresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 				
-				echo "<h4>Users matching '{$search}'</h4>\n";
-				
 				if ($userresult->num_rows == 0) {
-					echo "No results found.";
+					$noresult = $noresult + 1;
+					exit();
 				} else {
+					echo "<h4>Users matching '{$search}'</h4>\n";
+
 					// print users in ul
 					echo "<ul>\n";
 					while ($line = mysqli_fetch_array($userresult, MYSQLI_ASSOC)) {
@@ -137,6 +144,10 @@
 							}
 					}
 					echo "</ul>\n";
+				}
+
+				if ($noresult == 3) {
+					echo "<h4>No results found for '{$search}'</h4>\n"
 				}
 
 				//Free result set
