@@ -30,158 +30,158 @@ Notes:  This function was particularly difficult to implement because …
 	<li>
 		<h4>Function Number: 1</h4>
 		<h4>Function Name: Search Content by Title*</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/result.php</h5>
-		<h5>Function Type: Query (SELECT)</h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/result.php</p>
+		<p>Function Type: Query (SELECT)</p>
 		<p>Description: Searches the CONTENT table in the database for all titles matching a search term. Results are pulled and listed under the 'Content' header.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: CONTENT</h6>
-		<h6>Sample Input: 'The Dark'</h6>
-		<h6>Sample Output: List of matching titles, along with their producer and year released</h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: CONTENT</p>
+		<p>Sample Input: 'The Dark'</p>
+		<p>Sample Output: List of matching titles, along with their producer and year released</p>
 		<p>Notes for use: Type your search into the search form atop the page in the navbar, and submit. </p>
 	</li>
 	<li>
 		<h4>Function Number: 2</h4>
 		<h4>Function Name: Search Reviews by Word*</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/result.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/result.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Searches the REVIEWS table in the database for all reviews matching a search word. Results are pulled and listed under the 'Reviews' header.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: REVIEWS</h6>
-		<h6>Sample Input: 'CLASS'</h6>
-		<h6>Sample Output: List of matching reviews for content, along with their authors and time of submission</h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: REVIEWS</p>
+		<p>Sample Input: 'CLASS'</p>
+		<p>Sample Output: List of matching reviews for content, along with their authors and time of submission</p>
 		<p>Notes for use: Type your search into the search form atop the page in the navbar, and submit. </p>
 	</li>
 	<li>
 		<h4>Function Number: 3</h4>
 		<h4>Function Name: Search Users by Username*</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/result.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/result.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Searches the USERS table in the database for all users with a username matching the search term. Results are pulled and listed under the 'Users' header.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: USERS</h6>
-		<h6>Sample Input: 'margarita'</h6>
-		<h6>Sample Output: Matching usernames, along with links to view their profiles </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: USERS</p>
+		<p>Sample Input: 'margarita'</p>
+		<p>Sample Output: Matching usernames, along with links to view their profiles </p>
 		<p>Notes for use: Type your search into the search form atop the page in the navbar, and submit. </p>
 	</li>
 	<li>
 		<h4>Function Number: 4</h4>
 		<h4>Function Name: Post Review*</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/review.php</h5>
-		<h5>Function Type: Query and Insert </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/review.php</p>
+		<p>Function Type: Query and Insert </p>
 		<p>Description: Posts new reviews to existing content in the database. Submissions must be authored by an existing user in the database. </p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: REVIEWS, CONTENT, USERS</h6>
-		<h6>Sample Input: 'Shrek', 'AWESOME', 'BIGTIMETOMMIE1'</h6>
-		<h6>Sample Output: Re-routes to a page confirming a successful submission. </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: REVIEWS, CONTENT, USERS</p>
+		<p>Sample Input: 'Shrek', 'AWESOME', 'BIGTIMETOMMIE1'</p>
+		<p>Sample Output: Re-routes to a page confirming a successful submission. </p>
 		<p>Notes for use: Hit 'Write a Review' at the bottom of the page. Fill out the form that appears, and submit. </p>
 	</li>
 	<li>
 		<h4>Function Number: 5</h4>
 		<h4>Function Name: Add New User*</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/newuser.php</h5>
-		<h5>Function Type: Insert </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/newuser.php</p>
+		<p>Function Type: Insert </p>
 		<p>Description: Creates a new user and adds them to the USERS table.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: USERS </h6>
-		<h6>Sample Input: 'JoeExotic', 'Oklahoma, United States', 'Fed em to the tigers'</h6>
-		<h6>Sample Output: Shows a success message below the form. </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: USERS </p>
+		<p>Sample Input: 'JoeExotic', 'Oklahoma, United States', 'Fed em to the tigers'</p>
+		<p>Sample Output: Shows a success message below the form. </p>
 		<p>Notes for use: Hit the 'Write a Review' button at the bottom of the Reviews page. Scroll down and follow the 'Create a new user' link. Fill out the form and submit. </p>
 	</li>
 	<li>
 		<!--AUTH PHRASE: 'supersecretphrase0908'-->
 		<h4>Function Number: 6</h4>
 		<h4>Function Name: Delete User* <a href="./removeuser.php">Click to use</a></h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/removeuser.php</h5>
-		<h5>Function Type: Delete </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/removeuser.php</p>
+		<p>Function Type: Delete </p>
 		<p>Description: Allows an admin to remove users from the USERS table, and consequently all of the reviews they authored. Requires a passphrase: 'supersecretphrase0908'.</p>
-		<h6>Primary Users: Site administrators</h6>
-		<h6>Tables affected: USERS, REVIEWS </h6>
-		<h6>Sample Input: GrandmaSue, 'supersecretphrase0908'</h6>
-		<h6>Sample Output: Message confirming a successful delete. </h6>
+		<p>Primary Users: Site administrators</p>
+		<p>Tables affected: USERS, REVIEWS </p>
+		<p>Sample Input: GrandmaSue, 'supersecretphrase0908'</p>
+		<p>Sample Output: Message confirming a successful delete. </p>
 		<p>Notes for use: Follow the link above, enter in an existing username & the authorization phrase to delete a user from the database.</p>
 	</li>
 	<li>
 		<h4>Function Number: 7</h4>
 		<h4>Function Name: Change User Info*</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/updateuser.php?user=BIGTIMETOMMIE1</h5>
-		<h5>Function Type: Update </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/updateuser.php?user=BIGTIMETOMMIE1</p>
+		<p>Function Type: Update </p>
 		<p>Description: Function for updating user profiles. Can be used to change the user's stored location & bio. </p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: USERS</h6>
-		<h6>Sample Input: 'Florida, United States', 'This here is a bio.'</h6>
-		<h6>Sample Output: Message confirming a successful update.</h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: USERS</p>
+		<p>Sample Input: 'Florida, United States', 'This here is a bio.'</p>
+		<p>Sample Output: Message confirming a successful update.</p>
 		<p>Notes for use: View user profile by utilizing the function below (#8). Find and follow the 'Edit info' link. Fill out the form and submit. </p>
 	</li>
 	<li>
 		<h4>Function Number: 8</h4>
 		<h4>Function Name: View User Page</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/viewuser.php?user=BIGTIMETOMMIE1</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/viewuser.php?user=BIGTIMETOMMIE1</p>
+		<p>Function Type: Query </p>
 		<p>Description: Function to display a user's info. Retrieves from the database the username, location, and bio for a chosen user.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: USERS</h6>
-		<h6>Sample Input: </h6>
-		<h6>Sample Output: </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: USERS</p>
+		<p>Sample Input: </p>
+		<p>Sample Output: </p>
 		<p>Notes for use: </p>
 	</li>
 	<li>
 		<h4>Function Number: 9</h4>
 		<h4>Function Name: View Latest Reviews</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/review.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/review.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Function retrieves all reviews in the database, sorted by time of submission. Most recent reviews appear first. </p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: </h6>
-		<h6>Sample Input: </h6>
-		<h6>Sample Output: </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: </p>
+		<p>Sample Input: </p>
+		<p>Sample Output: </p>
 		<p>Notes for use: </p>
 	</li>
 	<li>
 		<h4>Function Number: 10</h4>
 		<h4>Function Name: View All Movies</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/movies.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/movies.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Function that shows all movies in the database along with the number of reviews written about it. </p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: CONTENT, MOVIES, REVIEWS</h6>
-		<h6>Sample Input: N/A</h6>
-		<h6>Sample Output: Table displaying all movies by title, year released, & # of reviews. </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: CONTENT, MOVIES, REVIEWS</p>
+		<p>Sample Input: N/A</p>
+		<p>Sample Output: Table displaying all movies by title, year released, & # of reviews. </p>
 		<p>Notes for use: Click 'Movies' in the navbar. Results will be listed under 'All Movies'. </p>
 	</li>
 	<li>
 		<h4>Function Number: 11</h4>
 		<h4>Function Name: View All Shows</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/shows.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/shows.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Function that gets all shows from the database, including the # of seasons and reviews written about it, and the year first aired.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: CONTENT, SHOWS, REVIEWS</h6>
-		<h6>Sample Input: N/A</h6>
-		<h6>Sample Output: Table displaying all shows by name, year first aired, # of seasons, and # of reviews.</h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: CONTENT, SHOWS, REVIEWS</p>
+		<p>Sample Input: N/A</p>
+		<p>Sample Output: Table displaying all shows by name, year first aired, # of seasons, and # of reviews.</p>
 		<p>Notes: Click 'Shows' in the navbar. Results displayed under 'All Shows'.</p>
 	</li>
 	<li>
 		<h4>Function Number: 12</h4>
 		<h4>Function Name: View All Albums</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/music.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/music.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Retrieves all albums stored in the database, with the year released, and # of reviews.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: CONTENT, ALBUMS, REVIEWS</h6>
-		<h6>Sample Input: N/A</h6>
-		<h6>Sample Output: Table displaying all albums by title, year released and # of reviews.</h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: CONTENT, ALBUMS, REVIEWS</p>
+		<p>Sample Input: N/A</p>
+		<p>Sample Output: Table displaying all albums by title, year released and # of reviews.</p>
 		<p>Notes: Click 'Music' in the navbar. Results displayed under 'All Music'.</p>
 	</li>
 	<li>
 		<h4>Function Number: 13</h4>
 		<h4>Function Name: View All Contributors</h4>
-		<h5>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/contributors.php</h5>
-		<h5>Function Type: Query </h5>
+		<p>URL: http://webdev.cs.umt.edu/~bd152220/one_word_reviews/php/pages/contributors.php</p>
+		<p>Function Type: Query </p>
 		<p>Description: Function that retrieves the first & last names of all contributors in the database, along with their birthdate, hometown, and the # of contributions they've made to content.</p>
-		<h6>Primary Users: Site users (reviewers/readers)</h6>
-		<h6>Tables affected: CONTENT, CONTRIBUTORS, ROLES</h6>
-		<h6>Sample Input: N/A</h6>
-		<h6>Sample Output: Table displaying the full names of contributors, their birthdates, hometowns, and the # of contributions they've made. </h6>
+		<p>Primary Users: Site users (reviewers/readers)</p>
+		<p>Tables affected: CONTENT, CONTRIBUTORS, ROLES</p>
+		<p>Sample Input: N/A</p>
+		<p>Sample Output: Table displaying the full names of contributors, their birthdates, hometowns, and the # of contributions they've made. </p>
 		<p>Notes: Click 'Contributors' in the navbar. Results displayed under 'All Contributors'.</p>
 	</li>
 </ul>
