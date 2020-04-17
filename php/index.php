@@ -52,7 +52,7 @@
 			<button class="btn" style="border: 2px white solid; color: white; font-weight: 400;" data-toggle="collapse" data-target="#about">About</button>
 			
 			<div id="about" class="collapse container">
-				<p>This is word, a review site that does opinion different. As firm believers in quality over quantity, it is our personal mission to make sure you never have to read a 500-word review to get the gist again. <br> All of our reviews are limited to a word. That's right, just one <strong>word.</strong> Read & write all the reviews you could imagine in an instant. This is reviewing for the 21st century.</p>
+				<p>The database underneath this site contains information about site users, many types of content (movies, shows, albums), content contributors (actors, artists, directors, creators), and content awarding organizations. The relationships between these entities is stored, including user submitted reviews on content, contributor roles in content, and awards presented to content. We seek to provide information about content, but most importantly, to convey public opinion one <strong>word</strong> at a time. It is our personal mission to make sure you never have to read a 500-word review to get an opinion again. Get the gist easy, and fast.</p>
 			</div>
 		</div>
 
