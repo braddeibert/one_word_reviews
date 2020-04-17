@@ -13,7 +13,7 @@
 	<label for="uname">Username:</label>
 	<input name="uname" type="text" placeholder="Username (e.g. 'BIGTIMETOMMIE1')">
 	<label for="phrase">Authentication phrase:</label>
-	<input name="phrase" type="text" placeholder="123456789">
+	<input name="phrase" type="password" placeholder="123456789">
 	<button type="submit">REMOVE USER</button>
 </form>
 
