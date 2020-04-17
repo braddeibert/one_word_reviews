@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>ADMIN - REMOVE USER</title>
+	<link rel="stylesheet" href="./style.css">
+	<title>ADMIN - REMOVE USER</title>
 </head>
 <body style="background-color: white; color: black;">
 
@@ -28,7 +29,10 @@
 	$username = trim($username);
 	$auth = trim($auth);
 	
-	if ($auth != 'supersecretphrase0908') {
+	if ($auth == '') {
+		exit();
+	}
+	elseif ($auth != 'supersecretphrase0908') {
 		die("Incorrect phrase. Permission denied.");
 	}
 	
