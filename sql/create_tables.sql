@@ -86,7 +86,7 @@ CREATE TABLE REVIEWS (
     word varchar(255) not null,
     time_submitted timestamp DEFAULT CURRENT_TIMESTAMP(),
     FOREIGN KEY (author) REFERENCES USERS(username) ON DELETE CASCADE,
-    FOREIGN KEY (contId) REFERENCES CONTENT(contId) ON DELETE CASCADE,
+    FOREIGN KEY (contId) REFERENCES CONTENT(contId),
     PRIMARY KEY (author, contId)
 );
 
