@@ -43,46 +43,47 @@
 		</div>
 	
 		<div class="container">
-			<h2>All Movies</h2>
-			
-			<!-- php for pulling all movies from db -->
-			<?php
-				// connect to database
-				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
-				   or die('Could not connect ');
-
-				//perform SQL query
-				$query = 'SELECT title, year_released, COUNT(*) FROM CONTENT, MOVIES, REVIEWS WHERE CONTENT.contId = MOVIES.contId AND CONTENT.contId = REVIEWS.contId GROUP BY CONTENT.contId ORDER BY COUNT(*) DESC;';
-				$result = mysqli_query($link, $query)
-						or die("Query failed ");
-
-				//print results in html
-				echo " <table class='table'>\n";
+			<div class="jumbotron">
+				<h2>All Movies</h2>
 				
-				//headings
-				echo "\t<thead>\n";
-				echo "\t\t<th>Title</th>\n";
-				echo "\t\t<th>Year Released</th>\n";
-				echo "\t\t<th>Reviews (#)</th>\n";
-				echo "\t</thead>\n";
-				
-				//data
-				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-						echo "\t<tr>\n";
-						foreach ($line as $col_value) {
-								echo "\t\t<td>$col_value</td>\n";
-						}
-						echo "\t</tr>\n";
-				}
-				echo "</table>\n";
+				<!-- php for pulling all movies from db -->
+				<?php
+					// connect to database
+					$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+					or die('Could not connect ');
 
-				//Free result set
-				mysqli_free_result($result);
+					//perform SQL query
+					$query = 'SELECT title, year_released, COUNT(*) FROM CONTENT, MOVIES, REVIEWS WHERE CONTENT.contId = MOVIES.contId AND CONTENT.contId = REVIEWS.contId GROUP BY CONTENT.contId ORDER BY COUNT(*) DESC;';
+					$result = mysqli_query($link, $query)
+							or die("Query failed ");
 
-				//close connection
-				mysqli_close($link);
-			?>
-			
+					//print results in html
+					echo " <table class='table'>\n";
+					
+					//headings
+					echo "\t<thead>\n";
+					echo "\t\t<th>Title</th>\n";
+					echo "\t\t<th>Year Released</th>\n";
+					echo "\t\t<th>Reviews (#)</th>\n";
+					echo "\t</thead>\n";
+					
+					//data
+					while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+							echo "\t<tr>\n";
+							foreach ($line as $col_value) {
+									echo "\t\t<td>$col_value</td>\n";
+							}
+							echo "\t</tr>\n";
+					}
+					echo "</table>\n";
+
+					//Free result set
+					mysqli_free_result($result);
+
+					//close connection
+					mysqli_close($link);
+				?>
+			</div>
 		</div>
 	</div>
 </body>

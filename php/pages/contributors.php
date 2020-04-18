@@ -43,47 +43,48 @@
 		</div>
 	
 		<div class="container">
-			<h2>All Contributors</h2>
-			
-			<?php
-				// connect to database
-				$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
-				   or die('Could not connect ');
-
-				//perform SQL query
-				$query = 'SELECT fname, lname, birthdate, hometown, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY COUNT(*) DESC;';
-				$result = mysqli_query($link, $query)
-						or die("Query failed ");
-
-				//print results in html
-				echo " <table class='table'>\n";
+			<div class="jumboton">
+				<h2>All Contributors</h2>
 				
-				//headings
-				echo "\t<thead>\n";
-				echo "\t\t<th>First Name</th>\n";
-				echo "\t\t<th>Last Name</th>\n";
-				echo "\t\t<th>Birthdate</th>\n";
-				echo "\t\t<th>Hometown</th>\n";
-				echo "\t\t<th>Contributions (#)</th>\n";
-				echo "\t</thead>\n";
-				
-				//data
-				while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-						echo "\t<tr>\n";
-						foreach ($line as $col_value) {
-								echo "\t\t<td>$col_value</td>\n";
-						}
-						echo "\t</tr>\n";
-				}
-				echo "</table>\n";
+				<?php
+					// connect to database
+					$link=mysqli_connect("localhost", "bd152220", "ahqu3UucieGhe9vixui4chaaph8AiH", "bd152220")
+					or die('Could not connect ');
 
-				//Free result set
-				mysqli_free_result($result);
+					//perform SQL query
+					$query = 'SELECT fname, lname, birthdate, hometown, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY COUNT(*) DESC;';
+					$result = mysqli_query($link, $query)
+							or die("Query failed ");
 
-				//close connection
-				mysqli_close($link);
-			?>
-			
+					//print results in html
+					echo " <table class='table'>\n";
+					
+					//headings
+					echo "\t<thead>\n";
+					echo "\t\t<th>First Name</th>\n";
+					echo "\t\t<th>Last Name</th>\n";
+					echo "\t\t<th>Birthdate</th>\n";
+					echo "\t\t<th>Hometown</th>\n";
+					echo "\t\t<th>Contributions (#)</th>\n";
+					echo "\t</thead>\n";
+					
+					//data
+					while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+							echo "\t<tr>\n";
+							foreach ($line as $col_value) {
+									echo "\t\t<td>$col_value</td>\n";
+							}
+							echo "\t</tr>\n";
+					}
+					echo "</table>\n";
+
+					//Free result set
+					mysqli_free_result($result);
+
+					//close connection
+					mysqli_close($link);
+				?>
+			</div>
 		</div>
 	</div>
 </body>

@@ -71,6 +71,7 @@
 				if ($contentresult->num_rows == 0) {
 					$noresult = $noresult + 1;
 				} else {
+					echo "<div class='jumbotron'>\n";
 					echo "<h4>Content</h4>\n";
 
 					//print content search results in html
@@ -92,6 +93,7 @@
 							echo "\t</tr>\n";
 					}
 					echo "</table>\n";
+					echo "</div>\n";
 				}
 				
 				// search REVIEWS table for search term
@@ -103,6 +105,7 @@
 				if ($reviewresult->num_rows == 0) {
 					$noresult = $noresult + 1;
 				} else {
+					echo "<div class='jumbotron'>\n";
 					echo "<h4>Reviews</h4>\n";
 
 					//print review search results in html
@@ -125,6 +128,7 @@
 							echo "\t</tr>\n";
 					}
 					echo "</table>\n";
+					echo "</div>\n";
 				}
 				
 				// search USERS table for search term
@@ -135,6 +139,7 @@
 				if ($userresult->num_rows == 0) {
 					$noresult = $noresult + 1;
 				} else {
+					echo "<div class='jumbotron'>\n";
 					echo "<h4>Users</h4>\n";
 
 					// print users in ul
@@ -145,6 +150,7 @@
 							}
 					}
 					echo "</ul>\n";
+					echo "</div>\n";
 				}
 
 				if ($noresult == 3) {
