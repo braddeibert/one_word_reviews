@@ -52,7 +52,7 @@
 					or die('Could not connect ');
 
 					//perform SQL query
-					$query = 'SELECT fname, lname, birthdate, hometown, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY COUNT(*) DESC;';
+					$query = 'SELECT fname, lname, birthdate, hometown, COUNT(*) FROM CONTRIBUTORS, ROLES WHERE CONTRIBUTORS.contribId = ROLES.contribId GROUP BY CONTRIBUTORS.contribId ORDER BY lname;';
 					$result = mysqli_query($link, $query)
 							or die("Query failed ");
 

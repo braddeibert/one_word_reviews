@@ -53,7 +53,7 @@
 					or die('Could not connect ');
 
 					//perform SQL query
-					$query = 'SELECT title, year_released, COUNT(*) FROM CONTENT, MOVIES, REVIEWS WHERE CONTENT.contId = MOVIES.contId AND CONTENT.contId = REVIEWS.contId GROUP BY CONTENT.contId ORDER BY COUNT(*) DESC;';
+					$query = 'SELECT title, year_released, COUNT(*) FROM CONTENT, MOVIES, REVIEWS WHERE CONTENT.contId = MOVIES.contId AND CONTENT.contId = REVIEWS.contId GROUP BY CONTENT.contId ORDER BY title;';
 					$result = mysqli_query($link, $query)
 							or die("Query failed ");
 
