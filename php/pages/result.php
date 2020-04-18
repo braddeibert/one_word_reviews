@@ -63,7 +63,7 @@
 				}
 
 				// search CONTENT table for search term
-				$query = "SELECT title, producer, year_released FROM CONTENT WHERE LOCATE('$search', title) > 0;";
+				$query = "SELECT title, producer, year_released FROM CONTENT WHERE LOCATE('$search', title) > 0 ORDER BY title;";
 				$contentresult = mysqli_query($link, $query)
 						or die("Query failed - no content found");
 				

@@ -5,6 +5,18 @@
 </head>
 <body style="background-color: white; color: black;">
 
+<style>
+	ul {
+		padding: 0px;
+		}
+
+	li { 
+		border: 1px black solid; 
+		padding: 10px; list-style:none; 
+		margin: 5px;
+		}
+</style>
+
 <h1>"REVIEWS" Database Webpage User Guide - TEMPORARY PAGE!!!</h1>
 <br>
 
@@ -24,7 +36,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: CONTENT</p>
 		<p>Sample Input: Search term (e.g. 'The Dark Knight')</p>
-		<p>Sample Output: List of matching titles, along with their producer and year released. Sorted by </p>
+		<p>Sample Output: List of matching titles, along with their producer and year released. Sorted by title. </p>
 		<p>Notes for use: Type your search into the search form atop the page in the navbar, and submit. </p>
 		<p>Error handling: Searches with no matches meet a 'No results found' message. An empty search displays all contents in the CONTENT, REVIEWS, and USERS tables.</p>
 	</li>
@@ -37,7 +49,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: REVIEWS</p>
 		<p>Sample Input: Search term (e.g. 'CLASSIC')</p>
-		<p>Sample Output: List of matching reviews for content, along with their authors and time of submission.</p>
+		<p>Sample Output: List of matching reviews for content, along with their authors and time of submission. Sorted by review word. </p>
 		<p>Notes for use: Type your search into the search form atop the page in the navbar, and submit. </p>
 		<p>Error handling: Searches with no matches meet a 'No results found' message. An empty search displays all contents in the CONTENT, REVIEWS, and USERS tables.</p>
 	</li>
@@ -50,7 +62,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: USERS</p>
 		<p>Sample Input: Search term (e.g. "GrandmaSue")</p>
-		<p>Sample Output: Matching usernames, along with links to view their profiles. </p>
+		<p>Sample Output: Matching usernames, along with links to view their profiles. Sorted by username. </p>
 		<p>Notes for use: Type your search into the search form atop the page in the navbar, and submit. </p>
 		<p>Error handling: Searches with no matches meet a 'No results found' message. An empty search displays all contents in the CONTENT, REVIEWS, and USERS tables.</p>
 	</li>
@@ -142,7 +154,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: CONTENT, MOVIES, REVIEWS</p>
 		<p>Sample Input: N/A</p>
-		<p>Sample Output: Table displaying all movies by title, year released, & # of reviews. </p>
+		<p>Sample Output: Table displaying all movies by title, year released, & # of reviews. Sorted by movie title. </p>
 		<p>Notes for use: Click 'Movies' in the navbar. Results will be listed under 'All Movies'. </p>
 		<p>Error handling: N/A</p>
 	</li>
@@ -155,7 +167,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: CONTENT, SHOWS, REVIEWS</p>
 		<p>Sample Input: N/A</p>
-		<p>Sample Output: Table displaying all shows by name, year first aired, # of seasons, and # of reviews.</p>
+		<p>Sample Output: Table displaying all shows by name, year first aired, # of seasons, and # of reviews. Sorted by show title.</p>
 		<p>Notes for use: Click 'Shows' in the navbar. Results displayed under 'All Shows'.</p>
 		<p>Error handling: N/A</p>
 	</li>
@@ -168,7 +180,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: CONTENT, ALBUMS, REVIEWS</p>
 		<p>Sample Input: N/A</p>
-		<p>Sample Output: Table displaying all albums by title, year released and # of reviews.</p>
+		<p>Sample Output: Table displaying all albums by title, year released and # of reviews. Sorted by album title.</p>
 		<p>Notes for use: Click 'Music' in the navbar. Results displayed under 'All Music'.</p>
 		<p>Error handling: N/A</p>
 	</li>
@@ -181,7 +193,7 @@
 		<p>Primary Users: Site users (reviewers/readers)</p>
 		<p>Tables affected: CONTENT, CONTRIBUTORS, ROLES</p>
 		<p>Sample Input: N/A</p>
-		<p>Sample Output: Table displaying the full names of contributors, their birthdates, hometowns, and the # of contributions they've made. </p>
+		<p>Sample Output: Table displaying the full names of contributors, their birthdates, hometowns, and the # of contributions they've made. Sorted by contributor last name. </p>
 		<p>Notes for use: Click 'Contributors' in the navbar. Results displayed under 'All Contributors'.</p>
 		<p>Error handling: N/A</p>
 	</li>
