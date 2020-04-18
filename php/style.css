@@ -27,8 +27,13 @@ body {
 	padding-top: 10vh;
 }
 
+.collapsing {
+	transition: none;
+}
+
 #about {
 	background-color: #28a745;
+	opacity: 0.9;
 	border-radius: 0.5em;
 }
 
