@@ -146,7 +146,7 @@
 					echo "<ul>\n";
 					while ($line = mysqli_fetch_array($userresult, MYSQLI_ASSOC)) {
 							foreach ($line as $col_value) {
-									echo "\t<li>$col_value <a href='./viewuser.php?user=$col_value'>View</a></li>\n";
+									echo "\t<li><h6>$col_value - <a href='./viewuser.php?user=$col_value'>View</a></h6></li>\n";
 							}
 					}
 					echo "</ul>\n";

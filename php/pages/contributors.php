@@ -43,7 +43,7 @@
 		</div>
 	
 		<div class="container">
-			<div class="jumboton">
+			<div class="jumbotron">
 				<h2>All Contributors</h2>
 				
 				<?php
